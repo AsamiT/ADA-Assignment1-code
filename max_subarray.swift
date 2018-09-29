@@ -1,7 +1,7 @@
 //
 //  max_subarray.swift
 //  "Maximum Subarray" Swift program
-//  
+//
 //
 //  @name: Robert Maloy
 //  @date: 28 Sep. 2018
@@ -33,15 +33,15 @@ func shrinkArray(_ nums: [Int]) -> Int {
     if (numCount % 3 == 0) { //is numCount divisible by 3?
         while i <= numCount { //cycle from i (0) to numCount (nums length)
             if (i % 3 == 0 && i > 0) {
-                
+
                 //These are just debug functions!
                 //print("i:",i,"i-3:",(i-3),"i-1:",(i-1))
                 //print(nums[i-3], nums[i-1])
-            
+
                 //declare top and bottom functions
                 let a = (i-3)
                 let b = (i-1)
-                
+
                 holdingArray.append(copiedArray[a...b].reduce(0, +)) //append to second array the sum of all elements between "a" and "b" on the dynamic array.
                 if (holdingArray[z] > bestSum ) {
                     bestSum = holdingArray[z] //assign bestSum value to the array
@@ -73,7 +73,7 @@ func shrinkArray(_ nums: [Int]) -> Int {
     z = 0
     bestSum = 0
     worstSum = 0
-    
+
     if (numCount % 2 == 0) { //repeat the above, but if divisible by 2.
         while i <= numCount {
             if (i % 2 == 0 && i > 0) {
@@ -118,13 +118,9 @@ func shrinkArray(_ nums: [Int]) -> Int {
 }
 
 /**
- 
+
  This is what the entirety of the "main" code is, it simply does the function and applies it to a total, and then prints it.
- 
+
  **/
 var total = shrinkArray(nums)
 print("your sum is: ", total)
-
-
-
-

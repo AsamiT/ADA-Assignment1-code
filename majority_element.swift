@@ -43,7 +43,7 @@ func majorityElement(_ nums: [Int]) -> Int {
     k=0 //reset k so it doesn't overflow
   }
   let maxIndex = countingIndex.max()! //declare maxIndex to be equal to the largest integer value in counting index.
-  let maxIndex_loc = countingIndex.firstIndex(of: maxIndex) //set this variable to the index position of maxIndex.
+  let maxIndex_loc = countingIndex.index(of: maxIndex) //set this variable to the index position of maxIndex.
   let commonValue = uniqueVal[maxIndex_loc!] //set commonValue to where in uniqueVal the number holds the most positions.
   print(EA_CLONE) //print a copy of the array
   print("Largest integer value is:",commonValue) //tell me what integer exists the most times in that array
