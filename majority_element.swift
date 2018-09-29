@@ -16,17 +16,20 @@ var exampleArray_2 = [Int](arrayLiteral: 2,2,1,1,1,2,2)
 func majorityElement(_ nums: [Int]) -> Int {
   let EA_CLONE = nums
   let uniqueVal = Array(Set(EA_CLONE))
-  var countingIndex = [Int]()
+  var countingIndex = [Int](repeating: 0, count: uniqueVal.count)
   var i = 0
   var k = 0
   while i < uniqueVal.count {
+    print("i=",i)
     while k < EA_CLONE.count {
-      if (EA_CLONE[k] == uniqueVal[i]) {
+      if (uniqueVal[i] == EA_CLONE[k]) {
         countingIndex[i] = countingIndex[i] + 1
       }
-      k=k+1
+      print("k=",k)
+      k = k+1
     }
     i = i+1
+    k=0
   }
   print(EA_CLONE)
   print(uniqueVal)
